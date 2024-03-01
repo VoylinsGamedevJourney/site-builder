@@ -43,7 +43,11 @@ func add_new_site(dir: String) -> void:
 	file.close()
 
 
-func load_list() -> void:
+static func load_list() -> void:
+	instance._load_list()
+
+
+func _load_list() -> void:
 	## Loading the list of all previously worked on projects
 	if !FileAccess.file_exists(PATH):
 		print("No sites list found!")
@@ -67,8 +71,7 @@ func load_list() -> void:
 
 
 func site_button_pressed(path: String) -> void:
-	# TODO
-	print(path)
+	Main.switch_screen(Main.SCREENS.SITE_OVERVIEW)
 
 
 func _on_new_site_button_pressed():
@@ -79,7 +82,8 @@ func _on_new_site_button_pressed():
 	dialog.use_native_dialog = true
 	dialog.dir_selected.connect(func(dir: String):
 		add_new_site(dir)
-		site_button_pressed(dir))
+		site_button_pressed(dir)
+		Main.switch_screen(Main.SCREENS.SITE_SETTINGS))
 	add_child(dialog)
 	dialog.popup_centered()
 
@@ -96,6 +100,7 @@ func _on_open_site_button_pressed():
 			return
 		print(dir)
 		add_new_site(dir)
-		site_button_pressed(dir))
+		site_button_pressed(dir)
+		Main.switch_screen(Main.SCREENS.SITE_OVERVIEW))
 	add_child(dialog)
 	dialog.popup_centered()
