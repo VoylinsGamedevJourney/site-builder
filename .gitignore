@@ -12,6 +12,9 @@ venv.bak/
 .idea/
 
 
+# Python
+*.pyc
+
 # Linux dot files
 .directory
 

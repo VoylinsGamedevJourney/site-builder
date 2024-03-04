@@ -1,8 +1,9 @@
 import sys
+import build
 
 def run(type):
   if type == 'build':
-    pass
+    build.build()
   elif type == 'publish':
     pass
   elif type == 'help':
