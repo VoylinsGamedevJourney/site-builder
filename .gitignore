@@ -12,16 +12,5 @@ venv.bak/
 .idea/
 
 
-# Godot ignores
-.godot/
-.import/
-*.translation
-/bin/
-
-
 # Linux dot files
 .directory
-
-
-# Site builder
-site
