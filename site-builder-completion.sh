@@ -15,6 +15,9 @@ _site-builder() {
         build)
           COMPREPLY=( $(compgen -W "clean normal" -- $cur) )
           ;;
+        publish)
+          COMPREPLY=( $(compgen -f -- $cur) )
+          ;;
         *)
           ;;
       esac
