@@ -14,3 +14,6 @@ venv.bak/
 
 # Linux dot files
 .directory
+
+
+ssh.yaml
